@@ -74,7 +74,7 @@ public class LDAExtractor {
         for(int position = 0; position < tokens.getLength(); position++) {
             out.format("%s-%d ", dataAlphabet.lookupObject(tokens.getIndexAtPosition(position)), topics.getIndexAtPosition(position));
         }
-        System.out.println(out);
+        //System.out.println(out);
         
         // Estimate the topic distribution of the first instance, 
         //  given the current Gibbs state.
@@ -98,7 +98,7 @@ public class LDAExtractor {
                 map.put(dataAlphabet.lookupObject(idCountPair.getID()).toString(), (int)idCountPair.getWeight());
                 rank++;
             }
-            System.out.println(out);
+            //System.out.println(out);
             output.add(map);
         }
         

@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 
 public class MainApp {
@@ -17,7 +18,13 @@ public class MainApp {
 		for (String url : urls) {
 			try {
 				List<Map<String,Integer>> topics = extractor.extractTags(url);
-				for()
+				System.out.println("Topics for url " + url);
+				for(Map<String, Integer> tags : topics) {
+					for (Entry<String, Integer> entry : tags.entrySet()) {
+						System.out.println(entry.getKey() + " - " + entry.getValue());
+					}
+				}
+				System.out.println("======");
 				
 			} catch (IOException e) {
 				e.printStackTrace();
